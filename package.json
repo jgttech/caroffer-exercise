@@ -1,0 +1,38 @@
+{
+  "name": "caroffer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jonathon Tech",
+  "license": "ISC",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "services/*",
+    "src/*"
+  ],
+  "scripts": {
+    "bootstrap": "npx lerna bootstrap",
+    "bootstart": "npx npm-run-all -s clean bootstrap start",
+    "refresh": "npx npm-run-all -s clean bootstrap",
+
+    "clean": "npx npm-run-all -s clean:src clean:lerna clean:repo",
+    "clean:src": "npx lerna run clean",
+    "clean:lerna": "npx lerna clean --yes",
+    "clean:repo": "npx rimraf node_modules",
+
+    "dev": "npx npm-run-all -s dev:web dev:cars-api",
+    "dev:web": "yarn workspace @wmi/web dev",
+    "dev:cars-api": "yarn workspace @services/cars-api dev",
+
+    "prod": "npx npm-run-all -s prod:web prod:cars-api",
+    "prod:web": "yarn workspace @wmi/web prod",
+    "prod:cars-api": "yarn workspace @services/cars-api prod",
+
+    "start": "yarn workspace @wmi/web start",
+    "deploy": "npx npm-run-all -s deploy:cars-api",
+    "deploy:cars-api": "yarn workspace @services/cars-api deploy",
+
+    "services": "npx npm-run-all -s services:cars-api",
+    "services:cars-api": "yarn workspace @services/cars-api service"
+  }
+}

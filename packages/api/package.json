@@ -1,0 +1,21 @@
+{
+  "name": "@wmi/api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jonathon Tech",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "clean": "npx rimraf node_modules .dist"
+  },
+  "dependencies": {
+    "awesome-debounce-promise": "^2.1.0",
+    "axios": "^0.21.1"
+  },
+  "peerDependencies": {
+    "ramda": "^0.27.1",
+    "@wmi/framework": "^1.0.0",
+    "validator": "^13.1.1",
+    "base64url": "^3.0.1"
+  }
+}

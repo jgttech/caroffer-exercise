@@ -1,0 +1,27 @@
+{
+  "name": "@services/cars-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jonathon Tech",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "dev": "echo",
+    "prod": "echo",
+    "deploy": "npx npm-run-all -s sls:remove sls:deploy",
+    "sls:remove": "npx serverless remove --aws-profile serverless-sandbox",
+    "sls:deploy": "npx serverless deploy --aws-profile serverless-sandbox",
+    "clean": "npx rimraf .dist node_modules",
+    "service": "npx serverless offline"
+  },
+  "devDependencies": {
+    "serverless-offline": "^6.8.0",
+    "serverless-webpack": "^5.3.5"
+  },
+  "dependencies": {
+    "base64url": "^3.0.1",
+    "mongodb": "^3.6.4",
+    "mongodb-client-encryption": "^1.2.1",
+    "ramda": "^0.27.1"
+  }
+}

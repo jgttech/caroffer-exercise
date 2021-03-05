@@ -1,0 +1,21 @@
+{
+  "name": "@wmi/framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jonathon Tech",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "clean": "npx rimraf node_modules .dist"
+  },
+  "peerDependencies": {
+    "ramda": "^0.27.1",
+    "react": "^17.0.1",
+    "styled-components": "^5.2.1",
+    "styled-system": "^5.1.5",
+    "react-loadable": "^5.5.0",
+    "react-router-dom": "^5.2.0",
+    "validator": "^13.5.2",
+    "base64url": "^3.0.1"
+  }
+}

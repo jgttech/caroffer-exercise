@@ -1,0 +1,48 @@
+service: cars-api
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  apiGateway:
+    shouldStartNameWithService: true
+  environment:
+    MONGO_URI: mongodb+srv://atlas_serverless:yH3rOTdV5ky8c7LF@cluster0.gq2l8.mongodb.net/sandbox?retryWrites=true&w=majority
+
+functions:
+  postCarBySearch:
+    handler: post/carBySearch.handler
+    events:
+      - http:
+          path: /cars/search
+          method: post
+          cors: true
+  putResetCars:
+    handler: put/resetCars.handler
+    events:
+      - http:
+          path: /cars/reset
+          method: put
+          cors: true
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+package:
+  individually: true
+
+custom:
+  webpack:
+    webpackConfig: webpack.config.js
+    includeModules: true
+    packager: yarn
+    excludeFiles: ./**/*.test.js
+  serverless-offline:
+    host: localhost
+    httpPort: 3000
+    prefix: ""

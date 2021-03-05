@@ -1,0 +1,6 @@
+node_modules
+.dist
+dist
+.serverless
+*.zip
+cloudformation-template-update-stack.json
