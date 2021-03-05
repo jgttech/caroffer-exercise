@@ -11,7 +11,7 @@ provider:
   apiGateway:
     shouldStartNameWithService: true
   environment:
-    MONGO_URI: mongodb+srv://atlas_serverless:yH3rOTdV5ky8c7LF@cluster0.gq2l8.mongodb.net/sandbox?retryWrites=true&w=majority
+    MONGO_URI: null
 
 functions:
   postCarBySearch:
